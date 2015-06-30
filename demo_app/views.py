@@ -46,8 +46,7 @@ def task_detail(request, pk):
             serializer.save()
             return Response(serializer.data)
         else:
-            return Response(
-                serilizer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         task.delete()
